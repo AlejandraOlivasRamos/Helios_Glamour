@@ -19,3 +19,26 @@ textarea {
         padding: 0;
     }
 }
+
+
+.CentrarContenido {
+    text-align: center;
+}
+.rating {
+    font-size: 32px;
+    direction: ltr; /* Cambiamos la dirección de llenado de izquierda a derecha */
+}
+
+    .rating input {
+        display: none;
+    }
+
+    .rating label {
+        color: #ccc !important; /* Cambiamos el color de las estrellas a un color gris claro */
+        cursor: pointer;
+    }
+
+    .rating input:checked ~ label,
+    .rating input:checked ~ label ~ input:checked ~ label {
+        color: gold !important; /* Cambiamos el color de las estrellas seleccionadas a dorado */
+    }
