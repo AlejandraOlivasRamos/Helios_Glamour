@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="Helios_Glamour.WebForm1" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MisCitas.aspx.vb" Inherits="Helios_Glamour.WebForm1" %>
 
 
 <!DOCTYPE html>

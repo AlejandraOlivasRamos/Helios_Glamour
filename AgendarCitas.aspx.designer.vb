@@ -11,25 +11,34 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Favoritos
+Partial Public Class AgendarCitas
 
     '''<summary>
-    '''form1 control.
+    '''lbLocal control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents lbLocal As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''DS_Favoritos control.
+    '''lbRol control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DS_Favoritos As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents lbRol As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbUsuario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbUsuario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''DS_Usuario control.
@@ -50,38 +59,20 @@ Partial Public Class Favoritos
     Protected WithEvents DS_Servicios As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
-    '''lbUsuario control.
+    '''DS_Reserva control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbUsuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents DS_Reserva As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
-    '''lbLocal control.
+    '''divLocal control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbLocal As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lbFav control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbFav As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''litCarrusel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents litCarrusel As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents divLocal As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

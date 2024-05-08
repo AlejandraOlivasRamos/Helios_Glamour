@@ -27,8 +27,32 @@
 </head>
 
 <body class="dark-scheme">
+    <form id="form1" runat="server">
     <div id="wrapper">
-        
+          <asp:SqlDataSource ID="DS_Favoritos" runat="server" ConnectionString="<%$ ConnectionStrings:CS_ATLAS3 %>" SelectCommand="SELECT Favoritos.Id, Favoritos.FK_Usuario, Local.Foto, Local.Nombre, Local.Id AS IDLocal FROM Favoritos INNER JOIN Local ON Favoritos.FK_Local = Local.Id WHERE (Favoritos.FK_Usuario = @user )" DeleteCommand="DELETE FROM Favoritos WHERE (FK_Local = @local) AND (FK_Usuario = @user )">
+              <DeleteParameters>
+                  <asp:ControlParameter ControlID="lbFav" Name="local" PropertyName="Text" />
+                  <asp:ControlParameter ControlID="lbUsuario" Name="user" PropertyName="Text" />
+              </DeleteParameters>
+      <SelectParameters>
+          <asp:ControlParameter Name="user" ControlID="lbUsuario" PropertyName="Text" />
+      </SelectParameters>
+  </asp:SqlDataSource>
+                                        <a href="index.html">
+                     <asp:SqlDataSource ID="DS_Usuario" runat="server" ConnectionString="<%$ ConnectionStrings:AtlasConnectionString2 %>" SelectCommand="SELECT Id, Nombre, ApellidoPaterno, ApellidoMaterno, FotoUsuario, Usuario, Correo, Password FROM Usuarios"></asp:SqlDataSource>
+                                            </a>
+                                            <br />
+          <asp:SqlDataSource ID="DS_Servicios" runat="server" ConnectionString="<%$ ConnectionStrings:CS_ATLAS3 %>" SelectCommand="SELECT Local.Foto, Local.Nombre, Servicios.Servicio, Servicio_Local.FK_Local, Servicio_Local.FK_Servicio FROM Local INNER JOIN Servicio_Local ON Local.Id = Servicio_Local.FK_Local INNER JOIN Servicios ON Servicio_Local.FK_Servicio = Servicios.Id AND Servicio_Local.FK_Servicio = Servicios.Id WHERE (Servicio_Local.FK_Local = @local)">
+      <SelectParameters>
+          <asp:ControlParameter Name="user" ControlID="lbUsuario" PropertyName="Text" />
+          <asp:ControlParameter ControlID="lbLocal" Name="local" PropertyName="Text" />
+      </SelectParameters>
+  </asp:SqlDataSource>
+                                            <asp:Label ID="lbUsuario" runat="server" Visible="False"></asp:Label>
+                                                    <asp:Label ID="lbLocal" runat="server" Visible="False"></asp:Label>
+                                                            <asp:Label ID="lbFav" runat="server" Visible="True"></asp:Label>
+
+
         <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
@@ -117,93 +141,19 @@
             </div>
             <div class="de-gradient-edge-bottom"></div>
         </section>
+
         <div class="no-bottom no-top" id="content">
             <div id="top"></div>
 
             <section>
+
                 <div class="container swiper mySwiper">
+
                     <div class="swiper-wrapper content">
-                        <div class="swiper-slide card">
-                            <div class="card-content">
-                                <div class="image">
-                                    <img src="images/services/1.jpg" alt="">
-                                
-                       </div>
-                      <div class="name-profession">
-        <span class="name">Nombre del local</span>
-        <span class="profession">Servicios del local</span>
-                      </div>
-                      <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+         <asp:Literal runat="server" ID="litCarrusel"></asp:Literal>
 
-                        <i class="far fa-star"></i>
-        
-                      </div>
-                      <div class="button">
-                        <button class="AboutMe"><i class="fa-regular fa-heart"></i></button>
-
-                        <button class="hirMe">Hir Me</button>
-                      </div>
-        
-                            </div>
-        
-                        </div>  <div class="swiper-slide card">
-                            <div class="card-content">
-                                <div class="image">
-                                    <img src="images/services/1.jpg" alt="">
-                                
-                       </div>
-                      <div class="name-profession">
-        <span class="name">Nombre del local</span>
-        <span class="profession">Servicios del local</span>
-                      </div>
-                      <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-
-                        <i class="far fa-star"></i>
-        
-                      </div>
-                      <div class="button">
-                        <button class="AboutMe"><i class="fa-regular fa-heart"></i></button>
-                        <button class="hirMe">Hir Me</button>
-                      </div>
-        
-                            </div>
-        
-                        </div>  <div class="swiper-slide card">
-                            <div class="card-content">
-                                <div class="image">
-                                    <img src="images/services/1.jpg" alt="">
-                                
-                       </div>
-                      <div class="name-profession">
-        <span class="name">Nombre del local</span>
-        <span class="profession">Servicios del local</span>
-                      </div>
-                      <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-
-                        <i class="far fa-star"></i>
-        
-                      </div>
-                      <div class="button">
-                        <button class="AboutMe"><i class="fa-regular fa-heart"></i></button>
-                            <button class="hirMe">Hir Me</button>
-                      </div>
-        
-                            </div>
-        
-                        </div>
                         
+
                     </div>
         
                     </div>
@@ -244,7 +194,61 @@
                 });
             </script>
         
-            
+            <script>
+                var heartButtons = document.getElementsByClassName('AboutMe');
+                for (var i = 0; i < heartButtons.length; i++) {
+                    heartButtons[i].addEventListener('mouseover', function () {
+                        this.innerHTML = '<i class="fa-regular fa-heart"></i>';
+                    });
+                    heartButtons[i].addEventListener('mouseout', function () {
+                        this.innerHTML = '<i class="fa-solid fa-heart"></i>';
+                    });
+                }
+            </script>
+          
+
+          <script>
+              function eliminarFavorito(button) {
+                  var favoritoId = button.getAttribute("data-favorito-id");
+                  // Utilizar un valor por defecto si favoritoId es null o undefined
+                  if (!favoritoId) {
+                      favoritoId = 2; // Cambia este valor por el número que deseas utilizar por defecto
+                  }
+
+                  var userId = obtenerUserId(); // Obtener el ID del usuario de alguna manera, por ejemplo, a través de una función o una variable de sesión
+
+                  // Enviar el ID del favorito y el ID del usuario como parte de la solicitud POST
+                  fetch('Favoritos.aspx/EliminarFavorito', {
+                      method: 'POST',
+                      body: JSON.stringify({ favoritoId: favoritoId, userId: userId }), // Enviar el ID del favorito y el ID del usuario como parte del cuerpo de la solicitud
+                      headers: {
+                          'Content-Type': 'application/json'
+                      }
+                  })
+                      .then(response => {
+                          if (!response.ok) {
+                              throw new Error('Ocurrió un error al eliminar el favorito.');
+                          }
+                          return response.json();
+                      })
+                      .then(data => {
+                          console.log('Favorito eliminado correctamente.');
+                          // Si es necesario realizar alguna acción adicional después de eliminar el favorito, puedes hacerlo aquí
+                      })
+                      .catch(error => {
+                          console.error('Error:', error);
+                      });
+              }
+
+              // Función para obtener el ID del usuario
+              function obtenerUserId() {
+                  // Implementa esta función para obtener el ID del usuario de alguna manera, por ejemplo, a través de una función o una variable de sesión
+                  // Por ejemplo, podrías retornar el valor de una variable de sesión de JavaScript o de algún campo oculto en tu página
+                  return lbUsuario.textContent;
+              }
+          </script>
+
+
         </div>
         <!-- content close -->
         <a href="#" id="back-to-top"></a>
@@ -278,6 +282,7 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
+    </form>
 </body>
 
 </html>
