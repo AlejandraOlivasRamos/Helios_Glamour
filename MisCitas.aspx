@@ -27,7 +27,6 @@
 
 
 <body class="dark-scheme">
-    <form id="form1" runat="server">
     <div id="wrapper">
         
         <!-- page preloader begin -->
@@ -204,7 +203,6 @@
 
 <!-- Owl Carousel JavaScript -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    </form>
 </body>
 
 </html>
