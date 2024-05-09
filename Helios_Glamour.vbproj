@@ -902,6 +902,8 @@
     <Content Include="fonts\icofont\icofont.css" />
     <Content Include="fonts\icofont\icofont.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Iconos\Login\facebook.png" />
+    <Content Include="Iconos\Login\google.png" />
     <Content Include="images\background\1.jpg" />
     <Content Include="images\background\1.png" />
     <Content Include="images\background\2.1.jpg" />

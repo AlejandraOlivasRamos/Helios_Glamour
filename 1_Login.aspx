@@ -8,6 +8,7 @@
     <title></title>
 </head>
 <body>
+    <form runat="server">
     <%--Login--%>
     <section>
         <div>
@@ -29,7 +30,7 @@
                     <div>
                         <h5>Usuario</h5>
                         <div>
-                            <asp:TextBox ID="Usuario" runat="server"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="Usuario" ></asp:TextBox>
                         </div>
                     </div>
                     <%--Textbox password--%>
@@ -46,8 +47,7 @@
                         He leído y acepto el
                         <a href="acuerdo">acuerdo de usuario</a>
                         y la
-                        <a href="politica">política de privacidad</a>
-                        .
+                        <a href="politica">política de privacidad</a>.
                     </div>
 
                     <%--Boton login--%>
@@ -55,9 +55,25 @@
                         <asp:Button ID="Btnlogin" runat="server" Text="Inicia Sesion" />
                     </div>
 
+                    <%--Linea Or--%>
+                    <div>
+                        <div></div>
+                        <div>O seguir con</div>
+                        <div></div>
+                    </div>
+                    
+
+                    <%--Iniciacion session con gmail y fb--%>
+                    <div>
+                        <asp:ImageButton CssClass="marco" ID="BtnGmail" ImageUrl="Iconos/Login/google.png" runat="server" />
+                        <asp:ImageButton CssClass="marco" ID="BtnFacebook" ImageUrl="Iconos/Login/facebook.png" runat="server" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    </form>
+
+    <asp:SqlDataSource ID="DDS_IniciaSession" runat="server"></asp:SqlDataSource>
 </body>
 </html>
