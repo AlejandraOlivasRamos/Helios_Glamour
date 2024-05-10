@@ -42,6 +42,36 @@ Public Class AgendarCitas
 
                     divLocal.InnerHtml &= citaHtml.ToString()
 
+                    '****************************************************************'
+
+                    Dim ServicioHtml As New StringBuilder()
+                    For Each row As DataRowView In dv1
+
+                        Dim serviciosDelLocal As String = ObtenerServiciosDelLocal(row("IDLocal").ToString())
+
+
+                        ' Construir el HTML de cada elemento del carrusel
+                        ServicioHtml.Append("<div class='swiper-slide card'>")
+                        ServicioHtml.Append("    <div class='card-content'>")
+                        ServicioHtml.Append("        <div class='image'>")
+                        ServicioHtml.Append("            <img src='" & rutaCarpeta & Foto & "' alt=''>")
+                        ServicioHtml.Append("        </div>")
+                        ServicioHtml.Append("        <div class='name-profession'>")
+                        ServicioHtml.Append("            <span class='name'>" & local & "</span>")
+                        ServicioHtml.Append("            <span class='profession'>" & serviciosDelLocal & "</span>")
+                        ServicioHtml.Append("        </div>")
+                        ServicioHtml.Append("        <div class='rating'>")
+
+
+
+
+                    Next
+
+                    ' Agregar la información de la cita al carrusel
+                    litServicio.Text = citaHtml.ToString()
+
+
+
 
                 End If
             ElseIf Integer.TryParse(lbRol.Text, Nothing) AndAlso CInt(lbRol.Text) = 1 Then

@@ -75,4 +75,13 @@ Partial Public Class AgendarCitas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents divLocal As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''litServicio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents litServicio As Global.System.Web.UI.WebControls.Literal
 End Class
