@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Favoritos.aspx.vb" Inherits="Helios_Glamour.Favoritos" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditarPerfil.aspx.vb" Inherits="Helios_Glamour.EditarPerfil" %>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -14,21 +14,19 @@
     <!-- CSS Files
     ================================================== -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb" >
     <link href="css/plugins.css" rel="stylesheet" type="text/css" >
     <link href="css/style.css" rel="stylesheet" type="text/css" >
     <link href="css/coloring.css" rel="stylesheet" type="text/css" >
-    <link href="css/style2.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb" >
+
 
 </head>
 
 <body class="dark-scheme">
     <div id="wrapper">
-        
+
         <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
@@ -53,7 +51,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu" class="s2">
-                              
+                             
                                     <li><a class="menu-item" href="services.html">Barberias</a></li>
                                     <li><a class="menu-item" href="about.html">Esteticas</a>
                                       
@@ -74,7 +72,7 @@
                                     </li>
                                     <li><a class="menu-item" href="#"> Mi cuenta</a>
                                         <ul>
-                                              <li><a class="menu-item" href="MisCitas.aspx">Mis citas</a></li>
+                                               <li><a class="menu-item" href="MisCitas.aspx">Mis citas</a></li>
       <li><a class="menu-item" href="Favoritos.aspx">Favoritos</a></li>
       <li><a class="menu-item" href="EditarPerfil.aspx">Editar Perfil</a></li>
       <li><a class="menu-item" href="Ayuda.aspx">Ayuda</a></li>
@@ -99,11 +97,11 @@
         <!-- header close -->
         <!-- content begin -->
         <section id="subheader" class="jarallax">
-            <img src="images/background/2.jpg" class="jarallax-img" alt="">
+            <img src="images/background/2.1.jpg" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 text-center">
-                        <h1 style="color: white;">Mis Favoritos</h1>
+                        <h1 style="color: white;">Mi Perfil</h1>
                         <div class="de-separator"></div>
                     </div>
                 </div>
@@ -113,130 +111,69 @@
         <div class="no-bottom no-top" id="content">
             <div id="top"></div>
 
-            <section>
-                <div class="container swiper mySwiper">
-                    <div class="swiper-wrapper content">
-                        <div class="swiper-slide card">
-                            <div class="card-content">
-                                <div class="image">
-                                    <img src="images/services/1.jpg" alt="">
-                                
-                       </div>
-                      <div class="name-profession">
-        <span class="name">Nombre del local</span>
-        <span class="profession">Servicios del local</span>
-                      </div>
-                      <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
 
-                        <i class="far fa-star"></i>
-        
-                      </div>
-                      <div class="button">
-                        <button class="AboutMe"><i class="fa-regular fa-heart"></i></button>
 
-                        <button class="hirMe">Hir Me</button>
-                      </div>
-        
+            <section id="section-content" class="no-top" aria-label="section">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3 mt-10">
+                            <div class="d-sch-table">
+                                <h2 class="text-center wow fadeIn">Datos</h2>
+                                <div class="de-separator"></div>
+                                <div class="sc-wrap">
+                                    <div class="def-list-dots">
+
+                                      <dl>
+                                        <dt>
+                                            <span style="color:#4ba581;">Nombre</span>
+                                        </dt>
+                                        <dd> <button class="btn-Icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                                          </svg></button></dd>
+                                      </dl>
+
+                                      <dl>
+                                        <dt>
+                                            <span style="color:#4ba581;">Apellido Paterno</span>
+                                        </dt>
+                                        <dd> <button class="btn-Icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                                          </svg></button></dd>
+                                      </dl>
+                                      <dl>
+                                        <dt>
+                                            <span style="color:#4ba581;">Apellido Materno</span>
+                                        </dt>
+                                        <dd> <button class="btn-Icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                                          </svg></button></dd>
+                                      </dl>
+
+                                      <dl>
+                                        <dt>
+                                            <span style="color:#4ba581;">Correo</span>
+                                        </dt>
+                                        <dd> <button class="btn-Icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                                          </svg></button></dd>
+                                      </dl>
+                                      <div class="text-center">
+                                        <a href="book.html" class="btn-main">Cerrar Sesión</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="d-deco"></div>
                             </div>
-        
-                        </div>  <div class="swiper-slide card">
-                            <div class="card-content">
-                                <div class="image">
-                                    <img src="images/services/1.jpg" alt="">
-                                
-                       </div>
-                      <div class="name-profession">
-        <span class="name">Nombre del local</span>
-        <span class="profession">Servicios del local</span>
-                      </div>
-                      <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-
-                        <i class="far fa-star"></i>
-        
-                      </div>
-                      <div class="button">
-                        <button class="AboutMe"><i class="fa-regular fa-heart"></i></button>
-                        <button class="hirMe">Hir Me</button>
-                      </div>
-        
-                            </div>
-        
-                        </div>  <div class="swiper-slide card">
-                            <div class="card-content">
-                                <div class="image">
-                                    <img src="images/services/1.jpg" alt="">
-                                
-                       </div>
-                      <div class="name-profession">
-        <span class="name">Nombre del local</span>
-        <span class="profession">Servicios del local</span>
-                      </div>
-                      <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-
-                        <i class="far fa-star"></i>
-        
-                      </div>
-                      <div class="button">
-                        <button class="AboutMe"><i class="fa-regular fa-heart"></i></button>
-                            <button class="hirMe">Hir Me</button>
-                      </div>
-        
-                            </div>
-        
                         </div>
-                        
                     </div>
-        
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
+                    
+                </div>                    
             </section>
-            
-            <!-- Javascript Files
-            ================================================== -->
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-            <script>
-                var swiper = new Swiper(".mySwiper", {
-                    slidesPerView: 1,
-                    centeredSlides: false,
-                    slidesPerGroupSkip: 1,
-                    grabCursor: true,
-                    keyboard: {
-                        enabled: true,
-                    },
-                    breakpoints: {
-                        769: {
-                            slidesPerView: 2,
-                            slidesPerGroup: 2,
-                        },
-                    },
-                    scrollbar: {
-                        el: ".swiper-scrollbar",
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
-                });
-            </script>
-        
             
         </div>
         <!-- content close -->
@@ -248,11 +185,11 @@
                     
                     <div class="col-lg-4 text-lg-start text-center">
                         <div class="social-icons">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-                            <a href="#"><i class="fa-solid fa-rss"></i></a>
+                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-rss fa-lg"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 text-lg-center text-center">
@@ -271,6 +208,7 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

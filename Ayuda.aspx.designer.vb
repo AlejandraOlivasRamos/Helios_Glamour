@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Favoritos
+Partial Public Class Ayuda
 End Class

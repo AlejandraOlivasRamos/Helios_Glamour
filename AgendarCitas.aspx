@@ -24,26 +24,9 @@
 </head>
 
 <body class="dark-scheme">
-                                        <a href="index.html"></a>
     <div id="wrapper">
-                                                                <asp:Label ID="lbLocal" runat="server" Visible="False"></asp:Label>
-              <asp:Label ID="lbRol" runat="server" Visible="False"></asp:Label>
-<asp:Label ID="lbUsuario" runat="server" Visible="False"></asp:Label>
-
-                                        <asp:SqlDataSource ID="DS_Usuario" runat="server" ConnectionString="<%$ ConnectionStrings:AtlasConnectionString5 %>" SelectCommand="SELECT Usuarios.Id, Usuarios.Nombre, Usuarios.ApellidoPaterno, Usuarios.ApellidoMaterno, Local.Id AS IDLocal, Empleado.Id AS IDEmpleado, Empleado.Nombre AS NombreEmpleado, Empleado.Paterno, Empleado.Materno, Usuarios.FotoUsuario, Local.Foto, Local.Nombre AS NombreLocal, Rol.Id AS Rol, Usuarios.Usuario, Usuarios.Correo, Usuarios.Password, Empleado.Usuario AS UserEmpledo, Empleado.Password AS PassEmpleado, Local.Password AS PassLocal, Local.Usuario AS UserLocal FROM Rol LEFT OUTER JOIN Usuarios ON Rol.Id = Usuarios.FK_Rol LEFT OUTER JOIN Local ON Rol.Id = Local.FK_Rol LEFT OUTER JOIN Empleado ON Rol.Id = Empleado.FK_Rol"></asp:SqlDataSource>
-          <asp:SqlDataSource ID="DS_Servicios" runat="server" ConnectionString="<%$ ConnectionStrings:AtlasConnectionString5 %>" SelectCommand="SELECT Local.Nombre, Servicios.Servicio, Servicio_Local.FK_Local, Servicio_Local.FK_Servicio FROM Local INNER JOIN Servicio_Local ON Local.Id = Servicio_Local.FK_Local INNER JOIN Servicios ON Servicio_Local.FK_Servicio = Servicios.Id AND Servicio_Local.FK_Servicio = Servicios.Id WHERE (Servicio_Local.FK_Local = @local)" ProviderName="<%$ ConnectionStrings:AtlasConnectionString5.ProviderName %>">
-      <SelectParameters>
-          <asp:ControlParameter Name="user" ControlID="lbUsuario" PropertyName="Text" />
-          <asp:ControlParameter ControlID="lbLocal" Name="local" PropertyName="Text" />
-      </SelectParameters>
-  </asp:SqlDataSource>
-                                                           <asp:SqlDataSource ID="DS_Reserva" runat="server" ConnectionString="<%$ ConnectionStrings:AtlasConnectionString5 %>" SelectCommand="SELECT Local.Id, Local.Direccion, Local.Telefono, Local.Observaciones, Local.Foto, Local.Categoria, Local.Nombre, Local.Usuario, Local.Password, Local.Correo FROM Local INNER JOIN Local_Empleado ON Local.Id = Local_Empleado.FK_Local INNER JOIN Servicio_Local ON Local.Id = Servicio_Local.FK_Local INNER JOIN Servicios ON Servicio_Local.FK_Servicio = Servicios.Id AND Servicio_Local.FK_Servicio = Servicios.Id INNER JOIN Horario ON Local.Id = Horario.Id INNER JOIN Album ON Local.Id = Album.FK_Local AND Servicio_Local.Id = Album.FK_Local AND Servicios.Id = Album.FK_Servicio WHERE (Local.Id = @IDLocal)" ProviderName="<%$ ConnectionStrings:AtlasConnectionString5.ProviderName %>">
-                       <SelectParameters>
-                           <asp:ControlParameter ControlID="lbLocal" Name="IDLocal" PropertyName="Text" />
-                       </SelectParameters>
-</asp:SqlDataSource>                                         
-      
-         <!-- page preloader begin -->
+        
+        <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
 
@@ -67,14 +50,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu" class="s2">
-                                    <li><a class="menu-item" href="index.html">Inicio</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="index.html">Home 1</a></li>
-                                            <li><a class="menu-item" href="index-2.html">Home 2</a></li>
-                                            <li><a class="menu-item" href="index-3.html">Home 3</a></li>
-                                            <li><a class="menu-item" href="index-4.html">Home 4</a></li>
-                                        </ul>
-                                    </li>
+                                
                                     <li><a class="menu-item" href="services.html">Barberias</a></li>
                                     <li><a class="menu-item" href="about.html">Esteticas</a>
                                       
@@ -95,10 +71,10 @@
                                     </li>
                                     <li><a class="menu-item" href="#"> Mi cuenta</a>
                                         <ul>
-                                            <li><a class="menu-item" href="pricing.html">Mis citas</a></li>
-                                            <li><a class="menu-item" href="Favoritos.html">Favoritos</a></li>
-                                            <li><a class="menu-item" href="pricing.html">Editar Perfil</a></li>
-                                            <li><a class="menu-item" href="contact.html">Ayuda</a></li>
+                                          <li><a class="menu-item" href="MisCitas.aspx">Mis citas</a></li>
+                                            <li><a class="menu-item" href="Favoritos.aspx">Favoritos</a></li>
+                                            <li><a class="menu-item" href="EditarPerfil.aspx">Editar Perfil</a></li>
+                                            <li><a class="menu-item" href="Ayuda.aspx">Ayuda</a></li>
                                             <li><a class="menu-item" href="testimonials.html">Cerrar Sesión</a></li>
 
                                         </ul>
@@ -123,23 +99,26 @@
             <div id="top"></div>
             <!-- section begin -->
             <section id="subheader" class="jarallax">
-                    <div id="divLocal" runat="server"></div>
-
+                <img src="images/background/6.jpg" class="jarallax-img" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3 text-center">
+                            <h1>Nombre del local</h1>
+                            <div class="de-separator"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="de-gradient-edge-bottom"></div>
             </section>
 
-              <div class="col-lg-12 text-center" data-jarallax-element="-10">
-       <h2>Servicios</h2>
-      </div>
 
- <%--           servicios--%>
             <section id="section-pricing" aria-label="section">
                 <div class="container">
                     <div class="row g-5" id="gallery">
-                                     <asp:Literal runat="server" ID="litServicio"></asp:Literal>
-
                         <div class="col-lg-6 item">
                             <div class="sc-wrap"style="color: black;">
+                                <h3>Haircut</h3>
+
                                 <div class="def-list-dots">
 
                                   <dl>
@@ -170,6 +149,7 @@
 
                         <div class="col-lg-6 item">
                             <div class="sc-wrap">
+                                <h3>Shave</h3>
 
                                 <div class="def-list-dots" style="color: black;">
 
@@ -221,6 +201,7 @@
 
                         <div class="col-lg-6 item">
                             <div class="sc-wrap" style="color: black;">
+                                <h3>Facial</h3>
 
                                 <div class="def-list-dots" style="color: black;">
 
@@ -265,6 +246,7 @@
 
                         <div class="col-lg-6 item">
                             <div class="sc-wrap"style="color: black;">
+                                <h3>Package</h3>
 
                                 <div class="def-list-dots">
 

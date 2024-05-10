@@ -76,14 +76,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu" class="s2">
-                                    <li><a class="menu-item" href="index.html">Inicio</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="index.html">Home 1</a></li>
-                                            <li><a class="menu-item" href="index-2.html">Home 2</a></li>
-                                            <li><a class="menu-item" href="index-3.html">Home 3</a></li>
-                                            <li><a class="menu-item" href="index-4.html">Home 4</a></li>
-                                        </ul>
-                                    </li>
+                               
                                     <li><a class="menu-item" href="services.html">Barberias</a></li>
                                     <li><a class="menu-item" href="about.html">Esteticas</a>
                                       
@@ -104,10 +97,10 @@
                                     </li>
                                     <li><a class="menu-item" href="#"> Mi cuenta</a>
                                         <ul>
-                                            <li><a class="menu-item" href="pricing.html">Mis citas</a></li>
-                                            <li><a class="menu-item" href="Favoritos.html">Favoritos</a></li>
-                                            <li><a class="menu-item" href="EditarPerfil.html">Editar Perfil</a></li>
-                                            <li><a class="menu-item" href="contact.html">Ayuda</a></li>
+                                            <li><a class="menu-item" href="MisCitas.aspx">Mis citas</a></li>
+                                            <li><a class="menu-item" href="Favoritos.aspx">Favoritos</a></li>
+                                            <li><a class="menu-item" href="EditarPerfil.aspx">Editar Perfil</a></li>
+                                            <li><a class="menu-item" href="Ayuda.aspx">Ayuda</a></li>
                                             <li><a class="menu-item" href="testimonials.html">Cerrar Sesión</a></li>
 
                                         </ul>
